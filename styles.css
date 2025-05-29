@@ -1,0 +1,293 @@
+  :root {
+    --beak-color: orange;
+    --neck-color: grey;
+  }
+  
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body { 
+    width: 100%;
+    height:100%;
+    background: linear-gradient(
+        90deg,
+        rgb(158, 211, 255),
+        rgb(253, 245, 208)
+    );
+    overflow: hidden;
+} 
+
+/* START Styling the environment */
+#big-mountain {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top:180px;
+    transform: skew(0deg, 45deg);
+    z-index: -1;
+    background: linear-gradient(
+        180deg,
+        rgb(203, 241, 228),
+        rgb(70, 171, 253)
+    );
+}
+
+#little-mountain {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top:270px;
+    left:140px;
+    transform: skew(-49deg, 45deg);
+    z-index: -2;
+    background: linear-gradient(
+        180deg,
+        rgb(203, 241, 228),
+        rgb(70, 171, 253)
+    );
+}
+
+#sun {
+    border-radius: 100%;
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    background: rgb(250, 250, 22);
+}
+
+#floor {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(
+        90deg,
+        rgb(92, 190, 255),
+        rgb(181, 243, 240)  
+    );
+    position: absolute;
+    top: 300px;  
+}
+/* FINISH Styling the environment */
+
+/* START Styling the penguin */
+#penguin {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 15px auto;
+    z-index: 1;
+    transition: 1.2s ease-in-out;
+}
+
+#penguin * {
+    position: absolute;
+}
+
+#penguin:active {
+    transform: scale(1.35);
+    cursor: not-allowed;
+}
+
+#head {
+    width: 140px;
+    height: 120px;
+    border-radius: 50%;
+    top: 85px;
+    left: 27%;
+    background: linear-gradient(
+        45deg,
+        var(--neck-color),
+        rgb(239, 240, 228)
+    );
+    z-index: 3;
+}
+
+#face {
+    width: 120px;
+    height: 80px;
+    border-radius: 30% 30% 50% 50%;
+    top: 30px;
+    left: 10px;
+    background: white;
+}
+
+#right-face {
+    width: 70px;
+    height: 85px;
+    z-index: 1;
+    border-radius: 50%;
+    top: -13px;
+    background-color: white;
+}
+
+#left-face {
+    width: 70px;
+    height: 85px;
+    z-index: 1;
+    border-radius: 50%;
+    top: -13px;
+    left: 50px;
+    background-color: white;
+}
+
+.eye {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: black;
+    top: 43px;
+    z-index: 2;
+}
+
+.eye.right {
+    left: 36px;
+}
+
+.eye.left {
+    left: 83px;
+}
+
+.lid {
+    width: 29px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: white;
+    top: 5px;
+    left: -3.4px;
+}
+
+.beak {
+   background: var(--beak-color);
+   width: 30px;
+   height: 15px;
+   border-radius: 50%;
+   left: 56px;
+   z-index: 3;
+}
+
+.beak.top {
+    top: 64px;
+}
+
+.beak.bottom {
+    left: 59px;
+    top: 70px;
+    width: 25px;
+}
+
+.cheek {
+    width: 21px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: pink;
+    z-index: 3;
+    top: 75px;
+}
+
+.cheek.right {
+    left: 25px;
+}
+
+.cheek.left {
+    left: 95px;
+}
+
+#body {
+    width: 165px;
+    height: 150px;
+    border-radius: 47%;
+    z-index: 2;
+    left: 22%;
+    top: 155px;
+    background: linear-gradient(
+        45deg,
+        rgb(207, 207, 207),
+        rgb(201, 201, 201) 20%,
+        rgb(255, 255, 255) 50%
+    );
+}
+
+#neck {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 45%;
+    left: 45px;
+    background: linear-gradient(
+        40deg,
+        var(--neck-color),
+        rgb(239, 240, 228)
+    );
+}
+
+.wing {
+    border: 1px solid rgb(207, 207, 207);
+    width: 80px;
+    height: 48px;
+    border-radius: 50% 40% 90% 400%;
+    background: linear-gradient(
+        360deg,
+        rgb(139, 139, 139),
+        var(--neck-color) 20%,
+        rgb(212, 212, 212) 
+    );
+    top: 140px;
+}
+
+.wing.right {
+    transform: rotate(45deg);
+    transform-origin: right;
+    top: 165px;
+    left: 10px;
+    animation: hello 3s linear 1s infinite;
+}
+
+@keyframes hello {
+    10% {
+        transform: rotate(25deg);
+    }
+
+    20% {
+        transform: rotate(45deg);
+    }
+
+    30% {
+        transform: rotate(25deg);
+    }
+
+    40% {
+        transform: rotate(45deg)
+    }
+
+}
+
+.wing.left {
+    transform: scaleX(-1) rotate(-45deg);
+    left: 180px;
+    top: 180px;
+}
+
+
+.foot {
+    width: 45px;
+    height: 30px;
+    border-radius: 50%;
+    top: 290px;
+    background-color: var(--beak-color);
+}
+
+.foot.right {
+    transform: rotate(170deg);
+    left: 100px;
+    z-index: 1;
+}
+
+.foot.left {
+    transform:rotate(15deg);
+    left: 160px;
+    z-index: 1;
+}
+/* FINISH Styling the penguin */
